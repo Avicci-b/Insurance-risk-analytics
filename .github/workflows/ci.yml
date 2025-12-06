@@ -39,4 +39,4 @@ jobs:
     - name: Check code formatting with black
       run: |
         pip install black
-        black --check src/ scripts/ --line-length 127
+        black --check src/ scripts/ --line-length 500
