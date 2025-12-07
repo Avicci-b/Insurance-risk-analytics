@@ -1,0 +1,110 @@
+schema: '2.0'
+stages:
+  document_raw_data:
+    cmd: python scripts/document_data_structure.py
+    deps:
+    - path: data/raw/MachineLearningRating_v3.txt
+      hash: md5
+      md5: f6b7009b68ae21372b7deca9307fbb23
+      size: 529363713
+    - path: scripts/document_data_structure.py
+      hash: md5
+      md5: ccb0a2c41840cbed7122473f8ee93831
+      size: 2938
+    params:
+      params.yaml:
+        data.original_file: MachineLearningRating_v3.txt
+    outs:
+    - path: reports/raw_data_documentation.md
+      hash: md5
+      md5: ecac74a083cb5a6a9df3246c4bd40c94
+      size: 355
+    - path: reports/raw_data_metrics.json
+      hash: md5
+      md5: 578158b3a7790ef127c87025f8759d52
+      size: 1090
+  document_conversion:
+    cmd: python scripts/document_conversion.py
+    deps:
+    - path: data/raw/MachineLearningRating_v3.txt
+      hash: md5
+      md5: f6b7009b68ae21372b7deca9307fbb23
+      size: 529363713
+    - path: scripts/document_conversion.py
+      hash: md5
+      md5: d7c51ec8b81409b52cd65bfa6e148b3b
+      size: 1891
+    params:
+      params.yaml:
+        data.delimiter: '|'
+    outs:
+    - path: reports/conversion_metrics.json
+      hash: md5
+      md5: cdba73430aca5cfc94f888533114db41
+      size: 581
+    - path: reports/conversion_report.md
+      hash: md5
+      md5: 6e215f8ece03deb30bbbd3d31d3f7c05
+      size: 226
+  document_cleaning:
+    cmd: python scripts/document_cleaning.py
+    deps:
+    - path: data/processed/insurance_data_cleaned.csv
+      hash: md5
+      md5: 9f6aacea3b6408fc20d9f5e9594bf6a4
+      size: 550590696
+    - path: scripts/document_cleaning.py
+      hash: md5
+      md5: 350f914a72ba5f64498e3b5c04e194fc
+      size: 2621
+    params:
+      params.yaml:
+        cleaning.missing_categorical: mode
+        cleaning.missing_numerical: median
+        data.premium_scaling_factor: 12
+    outs:
+    - path: reports/business_insights.json
+      hash: md5
+      md5: ac2a704651dd088e77e1eac34f782606
+      size: 226
+    - path: reports/cleaning_documentation.md
+      hash: md5
+      md5: d1aabaf0efae192137d517a72794a13f
+      size: 474
+    - path: reports/cleaning_metrics.json
+      hash: md5
+      md5: 1c4e4465234fdcd8dc8709813d48d9fe
+      size: 765
+  generate_eda_summary:
+    cmd: python scripts/generate_eda_summary.py
+    deps:
+    - path: data/processed/insurance_data_cleaned.csv
+      hash: md5
+      md5: 9f6aacea3b6408fc20d9f5e9594bf6a4
+      size: 550590696
+    - path: scripts/generate_eda_summary.py
+      hash: md5
+      md5: 186f0b616ebcf9a4743c20a4b05679ea
+      size: 1530
+      isexec: true
+    params:
+      params.yaml:
+        eda.random_state: 42
+        eda.sample_size: 10000
+    outs:
+    - path: reports/eda_summary_metrics.json
+      hash: md5
+      md5: 18942f3daf55e1be5d9f27859ff19945
+      size: 433
+    - path: reports/eda_summary_report.md
+      hash: md5
+      md5: 9fc38649b16d248beb801774b89a7728
+      size: 305
+    - path: reports/figures/loss_ratio_by_province.png
+      hash: md5
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
+    - path: reports/figures/premium_vs_claims.png
+      hash: md5
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
