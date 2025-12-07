@@ -1,0 +1,42 @@
+{
+  "documentation_date": "2025-12-07T14:16:05.020770",
+  "file_info": {
+    "filename": "data/raw/MachineLearningRating_v3.txt",
+    "size_mb": 504.8405771255493,
+    "delimiter": "|",
+    "note": "Discovered in EDA: File uses pipe (|) delimiter"
+  },
+  "data_structure": {
+    "rows_total": "1,000,098 (from EDA)",
+    "columns_total": 52,
+    "columns_sample": [
+      "UnderwrittenCoverID",
+      "PolicyID",
+      "TransactionMonth",
+      "IsVATRegistered",
+      "Citizenship",
+      "LegalType",
+      "Title",
+      "Language",
+      "Bank",
+      "AccountType"
+    ],
+    "data_types_sample": {
+      "UnderwrittenCoverID": "int64",
+      "PolicyID": "int64",
+      "TransactionMonth": "object",
+      "IsVATRegistered": "bool",
+      "Citizenship": "object",
+      "LegalType": "object",
+      "Title": "object",
+      "Language": "object",
+      "Bank": "object",
+      "AccountType": "object"
+    }
+  },
+  "eda_findings_applied": [
+    "Delimiter: | (pipe), not comma",
+    "All columns match project description (55 columns)",
+    "Data appears complete for key columns"
+  ]
+}

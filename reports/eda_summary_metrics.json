@@ -1,0 +1,14 @@
+{
+  "task1_findings": [
+    "Premiums are monthly (\u00d712 for annual correction)",
+    "Overall loss ratio: 8.7% after correction (profitable)",
+    "Gauteng: 122.2% loss ratio (high risk)",
+    "Northern Cape: 28.3% loss ratio (low risk)",
+    "Claim frequency: 0.28% (very low)",
+    "Average claim severity: R23,273 (high)"
+  ],
+  "visualizations_generated": [
+    "loss_ratio_by_province.png",
+    "premium_vs_claims.png"
+  ]
+}

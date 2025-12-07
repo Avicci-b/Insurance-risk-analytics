@@ -1,0 +1,18 @@
+{
+  "conversion_process": {
+    "step": "TXT (pipe-separated) \u2192 CSV format",
+    "reason": "CSV easier for pandas processing and analysis",
+    "delimiter_used": "|",
+    "preservation": "All original data preserved, only format changed"
+  },
+  "file_details": {
+    "input": "data/raw/MachineLearningRating_v3.txt",
+    "output": "data/raw/insurance_data.csv",
+    "transformation": "Delimiter change only, no data modification"
+  },
+  "verification": {
+    "row_count_preserved": true,
+    "column_count_preserved": true,
+    "data_integrity": "Verified in Task 1 EDA"
+  }
+}

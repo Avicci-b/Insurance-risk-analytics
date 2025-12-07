@@ -1,0 +1,19 @@
+{
+  "key_discoveries": {
+    "premium_data": "TotalPremium represents MONTHLY premium (not annual)",
+    "scaling_applied": "Multiplied by 12 for annual equivalent",
+    "new_column": "Created AnnualPremium = TotalPremium \u00d7 12",
+    "business_impact": "Loss ratio changed from 104.77% \u2192 8.7% (profitable)"
+  },
+  "cleaning_steps": [
+    "Unit correction: Monthly \u2192 Annual premium",
+    "Created derived column: AnnualPremium",
+    "Recalculated business metrics with corrected units"
+  ],
+  "business_insights": {
+    "overall_profitability": "8.7% loss ratio (profitable)",
+    "claim_frequency": "0.28% of policies",
+    "claim_severity": "R23,273.39 average",
+    "risk_segmentation": "93.9% loss ratio gap between Gauteng and Northern Cape"
+  }
+}
