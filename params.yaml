@@ -1,0 +1,41 @@
+# params.yaml - Configuration parameters for data pipeline
+
+data:
+  # File information
+  original_file: "MachineLearningRating_v3.txt"
+  delimiter: "|"  # Pipe-separated file
+  
+  # Premium correction discovered in EDA
+  premium_scaling_factor: 12  # Monthly → Annual conversion
+  corrected_columns:
+    - AnnualPremium  # Created column = TotalPremium × 12
+  
+cleaning:
+  # Missing value handling strategies
+  missing_numerical: "median"
+  missing_categorical: "mode"
+  
+  # Outlier detection (based on your EDA)
+  outlier_threshold: 3.0  # 3×IQR rule
+  columns_for_outlier_check:
+    - TotalPremium
+    - TotalClaims
+    - CustomValueEstimate
+    
+eda:
+  # EDA configuration
+  sample_size: 10000
+  random_state: 42
+  provinces_to_analyze:
+    - Gauteng
+    - Northern Cape
+    - KwaZulu-Natal
+    - Western Cape
+    - Eastern Cape
+    - Limpopo
+    
+business:
+  # Business metrics from EDA
+  overall_loss_ratio: 8.7  # After premium correction
+  claim_frequency: 0.28
+  avg_claim_severity: 23273.39

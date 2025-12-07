@@ -1,0 +1,78 @@
+# dvc.yaml - Data pipeline for insurance risk analytics
+# Documents the transformations performed in Task 1 EDA
+
+stages:
+  # ============================================
+  # STAGE 1: Document original data structure
+  # ============================================
+  document_raw_data:
+    desc: "Document original pipe-separated TXT file structure"
+    cmd: python scripts/document_data_structure.py
+    deps:
+      - data/raw/MachineLearningRating_v3.txt
+      - scripts/document_data_structure.py
+    params:
+      - data.original_file
+    outs:
+      - reports/raw_data_documentation.md
+    metrics:
+      - reports/raw_data_metrics.json:
+          cache: false  # Don't cache metrics (they're small)
+          
+  # ============================================
+  # STAGE 2: Document data conversion (TXT → CSV)
+  # ============================================
+  document_conversion:
+    desc: "Document TXT to CSV conversion process"
+    cmd: python scripts/document_conversion.py
+    deps:
+      - data/raw/MachineLearningRating_v3.txt
+      - scripts/document_conversion.py
+    params:
+      - data.delimiter
+    outs:
+      - reports/conversion_report.md
+    metrics:
+      - reports/conversion_metrics.json:
+          cache: false
+          
+  # ============================================
+  # STAGE 3: Document data cleaning & corrections
+  # ============================================
+  document_cleaning:
+    desc: "Document data cleaning steps discovered in EDA"
+    cmd: python scripts/document_cleaning.py
+    deps:
+      - data/processed/insurance_data_cleaned.csv
+      - scripts/document_cleaning.py
+    params:
+      - data.premium_scaling_factor
+      - cleaning.missing_numerical
+      - cleaning.missing_categorical
+    outs:
+      - reports/cleaning_documentation.md
+    metrics:
+      - reports/cleaning_metrics.json:
+          cache: false
+      - reports/business_insights.json:
+          cache: false
+          
+  # ============================================
+  # STAGE 4: Generate EDA summary report
+  # ============================================
+  generate_eda_summary:
+    desc: "Generate EDA summary from Task 1 findings"
+    cmd: python scripts/generate_eda_summary.py
+    deps:
+      - data/processed/insurance_data_cleaned.csv
+      - scripts/generate_eda_summary.py
+    params:
+      - eda.sample_size
+      - eda.random_state
+    outs:
+      - reports/eda_summary_report.md
+      - reports/figures/loss_ratio_by_province.png
+      - reports/figures/premium_vs_claims.png
+    metrics:
+      - reports/eda_summary_metrics.json:
+          cache: false
