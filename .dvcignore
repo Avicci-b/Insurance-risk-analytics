@@ -1,3 +1,15 @@
 # Add patterns of files dvc should ignore, which could improve
 # the performance. Learn more at
 # https://dvc.org/doc/user-guide/dvcignore
+
+# Patterns to improve DVC performance
+# DVC will skip these files when checking for changes
+
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+*.tmp
+*.log
+venv/
+.venv/
