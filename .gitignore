@@ -1,2 +1,78 @@
-venv
-data
+# ============================================
+# PYTHON & DEVELOPMENT
+# ============================================
+
+# Virtual environments
+venv/
+.env/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ============================================
+# DATA FILES - Managed by DVC
+# ============================================
+
+# Raw data - DVC will manage these
+data/raw/*.txt
+data/raw/*.csv
+!data/raw/*.dvc  # BUT track DVC pointer files
+
+# Processed data - DVC will manage these
+data/processed/*.csv
+data/processed/*.parquet
+data/processed/*.pkl
+!data/processed/*.dvc  # BUT track DVC pointer files
+
+# Reports/outputs (optional - can track or ignore)
+reports/*.html
+reports/figures/*
+!reports/*.json  # BUT track JSON metrics
+
+# ============================================
+# DVC - Let DVC manage its own ignore patterns
+# ============================================
+
+# DO NOT add DVC cache here - it's in .dvc/.gitignore
+# .dvc/tmp/
+# .dvc/cache/
