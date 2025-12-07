@@ -29,3 +29,29 @@ Task 4: Predictive Modeling
 
 ## Data Source
 Historical insurance claim data (February 2014 - August 2015) provided by ACIS.
+
+## Task 2 DVC set-up
+Data Tracking
+✅ Raw data: MachineLearningRating_v3.txt (pipe-separated)
+
+✅ Converted data: insurance_data.csv (CSV format)
+
+✅ Cleaned data: insurance_data_cleaned.csv (premium corrected)
+
+Reproducible Pipeline
+bash
+# Run entire data pipeline
+dvc repro
+
+# View pipeline
+dvc dag
+
+# Output:
+# 1. document_raw_data → 2. document_conversion → 
+# 3. document_cleaning → 4. generate_eda_summary
+Storage Configuration
+Remote: localstorage
+
+Location: ../dvc_storage/
+
+Status: All data files version controlled
