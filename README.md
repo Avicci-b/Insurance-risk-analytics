@@ -55,3 +55,35 @@ Remote: localstorage
 Location: ../dvc_storage/
 
 Status: All data files version controlled
+
+✅ Task 3: A/B Hypothesis Testing
+Objective: Statistically validate key risk drivers
+
+Tests Conducted:
+
+- Provincial Risk: ANOVA (p=0.000044) → REJECT H₀ - Significant differences
+
+- Zip Code Risk: ANOVA (p<0.001) → REJECT H₀ - Hyper-local variation exists
+
+- Zip Code Profit: t-test (p<0.001) → REJECT H₀ - Profitability varies
+
+- Gender Risk: Multiple tests (p=0.45-0.95) → FAIL TO REJECT H₀ - No significant difference
+
+- Business Impact: Statistical evidence supports regional pricing, rejects gender-based pricing
+
+✅ Task 4: Predictive Modeling
+Objective: Build risk-based pricing models
+
+Models Built:
+
+- Classification: Predict claim probability (3 models tested)
+
+- Regression: Predict claim amount (3 models tested)
+
+Best Performers:
+
+- Logistic Regression: 80.84% recall for claim detection
+
+- Linear Regression: R²=0.2995 for amount prediction
+
+Key Output: Risk scoring system (0-100 scale) with premium adjustments (-15% to +25%)
