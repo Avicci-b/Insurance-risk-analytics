@@ -35,8 +35,3 @@ jobs:
     - name: Run basic tests
       run: |
         python -c "import pandas; import numpy; print('All imports successful!')"
-        
-    #- name: Check code formatting with black
-     # run: |
-      #  pip install black
-       # black --check src/ scripts/ --line-length 127
