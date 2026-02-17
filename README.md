@@ -87,3 +87,4 @@ Best Performers:
 - Linear Regression: R²=0.2995 for amount prediction
 
 Key Output: Risk scoring system (0-100 scale) with premium adjustments (-15% to +25%)
+[![Continuous Integration](https://github.com/Avicci-b/Insurance-risk-analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/Avicci-b/Insurance-risk-analytics/actions/workflows/ci.yml)
