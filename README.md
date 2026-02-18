@@ -63,6 +63,10 @@ Insurance-risk-analytics/
 ├──models/
 ├──.dvcignore
 └── .gitignore
+<<<<<<< HEAD
+=======
+
+>>>>>>> 93a2d939802149ed731d46b80568edb7335946b7
 ```
 ## Technical Details
 # Data
