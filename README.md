@@ -42,7 +42,9 @@ streamlit run app.pydvc pull
 # Run the interactive dashboard
 streamlit run app.py
 
-## Project strucutre
+## 📁 Project Structure
+
+```text
 Insurance-risk-analytics/
 ├── .github/workflows/        # CI/CD pipeline
 ├──.dvc
@@ -61,6 +63,8 @@ Insurance-risk-analytics/
 ├──models/
 ├──.dvcignore
 └── .gitignore
+
+```
 ## Technical Details
 # Data
 - Source: ACIS historical claims (Feb 2014 – Aug 2015)
