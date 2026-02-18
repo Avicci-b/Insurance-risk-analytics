@@ -17,3 +17,4 @@ shap==0.44.0
 # === Dashboard ===
 streamlit==1.29.0
 streamlit-option-menu==0.3.6
+plotly
