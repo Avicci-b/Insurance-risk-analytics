@@ -38,11 +38,13 @@ pip install -r requirements.txt
 # Pull data with DVC 
 dvc pull
 # Run the interactive dashboard
-streamlit run app.pydvc pull
+streamlit run dashboard/app.pydvc pull
 # Run the interactive dashboard
-streamlit run app.py
+streamlit run dashboard/app.py
 
-## Project strucutre
+## 📁 Project Structure
+
+```text
 Insurance-risk-analytics/
 ├── .github/workflows/        # CI/CD pipeline
 ├──.dvc
@@ -61,6 +63,7 @@ Insurance-risk-analytics/
 ├──models/
 ├──.dvcignore
 └── .gitignore
+```
 ## Technical Details
 # Data
 - Source: ACIS historical claims (Feb 2014 – Aug 2015)
@@ -94,9 +97,9 @@ Data Analytics Engineer
 
 This project was completed as part of the KAIM Academy Insurance Risk Analytics Challenge.
 
-text
 
 ### Blog Post / Technical Report Outline
+
 
 **Title:** *How We Turned Insurance Data into a 125% Pricing Opportunity*
 
